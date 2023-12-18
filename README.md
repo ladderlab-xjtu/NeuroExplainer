@@ -36,7 +36,7 @@ pip install .
 ## Step 1. Data preparation
 We provide processed and curated dataset from the [Developing Human Connectome Project (dHCP)](https://biomedia.github.io/dHCP-release-notes/index.html). Note that the data repository is private and only visible to those who have access. The input spherical surfaces contain 10, 242 vertices, and three features, i.e., cortical thickness, mean curvature, and convexity, are required for the classfication.
 ## Step 2. Training
-### Train
+
 After data prepration, modify the [main.py](https://github.com/qianyuhou/NeuroExplainer/blob/main/main.py) file to match the training data in your own path. To save the coresponding models and results, the save directories must be manually changed. Then, run:
 ```
 python main.py
