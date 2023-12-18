@@ -36,7 +36,7 @@ The public dataset was used in this work (thank the authors for sharing their da
 ## Step 1. Data preparation
 ## Step 2. Training
 ### Train
-After data prepration, modify the [main.py](https://github.com/zhaofenqiang/Spherical_U-Net/blob/master/train.py) file to match the training data and model parameter storage files in your own path. Then, run:
+After data prepration, modify the [main.py](https://github.com/zhaofenqiang/Spherical_U-Net/blob/master/train.py) file to match the training data in your own path. To save the coresponding models and results, the save directories must be manually changed.Then, run:
 ```
 python main.py
 ```
