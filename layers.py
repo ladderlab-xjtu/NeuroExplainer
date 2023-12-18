@@ -30,8 +30,6 @@ class up_layer_norm(nn.Module):
             # of input channels in this layer.
     out_feats : int
             # of output channels in this layer.
-    upconv_top_index :上采样前的点的编号
-    upconv_down_index : 上采样后增加的点的编号
 
     Notes
     —————
@@ -54,11 +52,11 @@ class up_layer_norm(nn.Module):
         batch, raw_nodes, channel = x.size()
         new_nodes = int(raw_nodes * 4 - 6)
         x = torch.cat([x, x, x, x, x, x, x], dim=2)
-        x = x.view(batch, raw_nodes * 7, self.out_feats) #reshape  self.out_feats==channel细化不改变通道数
-        x1 = x[:, self.upconv_top_index, :]  #原有的点
-        assert (x1.size() == torch.Size([batch, raw_nodes, self.out_feats]))  #当 assert 语句后的表达式值为真时，程序继续执行；反之，程序停止执行，并报 AssertionError 错误
-        x2 = x[:, self.upconv_down_index, :].view(batch, -1, self.out_feats, 2)  #-1代表所有细分的点，2代表两个父节点
-        x = torch.cat((x1, torch.mean(x2, 3)), 1)  #细分后的点特征值插值计算
+        x = x.view(batch, raw_nodes * 7, self.out_feats) 
+        x1 = x[:, self.upconv_top_index, :]  
+        assert (x1.size() == torch.Size([batch, raw_nodes, self.out_feats]))  
+        x2 = x[:, self.upconv_down_index, :].view(batch, -1, self.out_feats, 2)  
+        x = torch.cat((x1, torch.mean(x2, 3)), 1)  
         assert (x.size() == torch.Size([batch, new_nodes, self.out_feats]))
         x = x.permute(0, 2, 1)
         return x
@@ -90,9 +88,9 @@ class onering_conv_layer_batch(nn.Module):
 
         self.in_feats = in_feats
         self.out_feats = out_feats
-        self.neigh_orders = neigh_orders #N*7
+        self.neigh_orders = neigh_orders 
 
-        self.weight = nn.Linear(7 * in_feats, out_feats) #一个神经网络的线性层
+        self.weight = nn.Linear(7 * in_feats, out_feats)
 
     def forward(self, x):
         x = x.permute(0, 2, 1)
@@ -131,7 +129,7 @@ class tworing_conv_layer_batch(nn.Module):
         self.out_feats = out_feats
         self.neigh_orders = neigh_orders
         
-        self.weight = nn.Linear(19 * in_feats, out_feats)  #二环19个邻点
+        self.weight = nn.Linear(19 * in_feats, out_feats)  
         
     def forward(self, x):
        
@@ -213,7 +211,7 @@ class upconv_layer_batch(nn.Module):
         super(upconv_layer_batch, self).__init__()
 
         self.in_feats = in_feats
-        self.out_feats = out_feats#out_feats是in_feats的1/2
+        self.out_feats = out_feats
         self.upconv_top_index = upconv_top_index
         self.upconv_down_index = upconv_down_index
         self.weight = nn.Linear(in_feats, 7 * out_feats)
