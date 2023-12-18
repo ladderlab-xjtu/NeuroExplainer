@@ -13,9 +13,9 @@ import numpy as np
 import os
 from typing import Callable
 import nibabel as nb
-from model import muilt_view_10242, muilt_view_negative_10242, muilt_view_10242_ori  #
+from model import muilt_view_10242, muilt_view_negative_10242, muilt_view_10242_ori  
 from layers import *
-from sphericalunet.utils.vtk import read_vtk, write_vtk  #读取和写入网格数据
+from sphericalunet.utils.vtk import read_vtk, write_vtk  
 import matplotlib.pyplot as plt
 
 """ hyper-parameters """
