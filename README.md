@@ -7,3 +7,29 @@ NeuroExplainer learns the hierarchical attention-decoding modules under subject-
 ![](https://github.com/qianyuhou/NeuroExplainer/blob/main/images/architecture.png)
 
 ![](https://github.com/qianyuhou/NeuroExplainer/blob/main/images/attention-comparison.png)
+## Package Dependency
+- python (3.6)
+- pytorch (0.4.1+)
+- torchvision (0.2.1+)
+- tensorboardx (1.6+)
+- NumPy (1.11.3)
+- SciPy (1.2.1)
+- pyvista (0.22.4+)
+## Step 0. Environment setup
+```
+git clone https://github.com/ladderlab-xjtu/NeuroExplainer.git
+```
+You can use conda to easily create an environment for the experiment using following command:
+```
+conda create -n neuroexplainer python=3.6 
+conda activate neuroexplainer
+conda install pytorch torchvision cudatoolkit=10.0 -c pytorch
+conda install -c conda-forge pyvista
+```
+To install the required packages, run:
+```
+pip install .
+```
+
+The public dataset was used in this work (thank the authors for sharing their datasets!):
+- [NAMIC]
