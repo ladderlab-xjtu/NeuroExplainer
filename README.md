@@ -55,7 +55,7 @@ All complete in ...
 ```
 The GPU memory consumption may vary depending on CUDA kernels.
 ### Test
-You can easily obtain the output attention maps on surface and sphere via the following commands. To predict a single surface’ attention map, you need to modify the :
+You can easily obtain the output attention maps on surface and sphere via the following commands. To predict a single surface’ attention map, you need to modify the [test.py](https://github.com/zhaofenqiang/Spherical_U-Net/blob/master/train.py)file to match the  data in your own path. To save the attention map of the left and right brain at the sphere and surface, the save directories must be manually changed or created.
 ### Visualization
 You can use [Paraview](https://www.paraview.org/) software to visualize the attention map in VTK format. An example of the coarse-grained attention map and the fine-grained attention map of preterm infant are shown below. More usages about Paraview please refer to [Paraview](https://www.paraview.org/).
 ![paraview](https://github.com/qianyuhou/NeuroExplainer/blob/main/images/attention%20map.png)
