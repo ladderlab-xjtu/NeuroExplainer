@@ -32,4 +32,24 @@ pip install .
 ```
 
 The public dataset was used in this work (thank the authors for sharing their datasets!):
-- [NAMIC]
+- [dHCP]
+## Step 1. Data preparation
+## Step 2. Training
+### Train
+### Test
+### Visualization
+## Citation
+Please cite the following paper if you use (part of) our code in your research:
+```
+@article{Ha2022:SPHARMNet,
+  author    = {Ha, Seungbo and Lyu, Ilwoo},
+  journal   = {IEEE Transactions on Medical Imaging},
+  title     = {SPHARM-Net: Spherical Harmonics-Based Convolution for Cortical Parcellation},
+  year      = {2022},
+  volume    = {41},
+  number    = {10},
+  pages     = {2739-2751},
+  doi       = {10.1109/TMI.2022.3168670},
+  publisher = {IEEE}
+}
+```
