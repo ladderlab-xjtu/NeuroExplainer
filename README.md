@@ -55,7 +55,7 @@ All complete in ...
 ```
 The GPU memory consumption may vary depending on CUDA kernels.
 ### Test
-### Visualization
+
 ### Visualization
 You can use [Paraview](https://www.paraview.org/) software to visualize the parcellated surface in VTK format. An example of the input curvature map and output parcellation map are shown below. More usages about Paraview please refer to [Paraview](https://www.paraview.org/).
 ![paraview](https://github.com/qianyuhou/NeuroExplainer/blob/main/images/attention%20map.png).
