@@ -36,7 +36,7 @@ The public dataset was used in this work (thank the authors for sharing their da
 ## Step 1. Data preparation
 ## Step 2. Training
 ### Train
-After data prepration, modify the [main.py](https://github.com/zhaofenqiang/Spherical_U-Net/blob/master/train.py) file to match the training data in your own path. To save the coresponding models and results, the save directories must be manually changed.Then, run:
+After data prepration, modify the [main.py](https://github.com/qianyuhou/NeuroExplainer/blob/main/main.py) file to match the training data in your own path. To save the coresponding models and results, the save directories must be manually changed.Then, run:
 ```
 python main.py
 ```
@@ -55,7 +55,7 @@ All complete in ...
 ```
 The GPU memory consumption may vary depending on CUDA kernels.
 ### Test
-You can easily obtain the output attention maps on surface and sphere via the following commands. To predict a single surface’ attention map, you need to modify the [test.py](https://github.com/zhaofenqiang/Spherical_U-Net/blob/master/train.py)file to match the  data in your own path. To save the attention map of the left and right brain at the sphere and surface, the save directories must be manually changed or created.
+You can easily obtain the output attention maps on surface and sphere via the following commands. To predict a single surface’ attention map, you need to modify the [test.py](https://github.com/qianyuhou/NeuroExplainer/blob/main/test.py) file to match the  data in your own path. To save the attention map of the left and right brain at the sphere and surface, the save directories must be manually changed or created.
 ### Visualization
 You can use [Paraview](https://www.paraview.org/) software to visualize the attention map in VTK format. An example of the coarse-grained attention map and the fine-grained attention map of preterm infant are shown below. More usages about Paraview please refer to [Paraview](https://www.paraview.org/).
 ![paraview](https://github.com/qianyuhou/NeuroExplainer/blob/main/images/attention%20map.png)
