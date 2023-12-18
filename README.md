@@ -7,14 +7,16 @@ NeuroExplainer learns the hierarchical attention-decoding modules under subject-
 ![](https://github.com/qianyuhou/NeuroExplainer/blob/main/images/architecture.png)
 
 ![](https://github.com/qianyuhou/NeuroExplainer/blob/main/images/attention-comparison.png)
+
 ## Package Dependency
 - python (3.10)
-- pytorch (0.4.1+)
-- torchvision (2.1.0)
+- pytorch (2.1.0)
+- torchvision (1.16.0)
 - tensorboardx (2.6.2.2)
 - NumPy (1.22.4)
 - SciPy (1.11.3)
 - pyvista (0.42.3)
+
 ## Step 0. Environment setup
 ```
 git clone https://github.com/ladderlab-xjtu/NeuroExplainer.git
@@ -23,7 +25,7 @@ You can use conda to easily create an environment for the experiment using follo
 ```
 conda create -n neuroexplainer python=3.10
 conda activate neuroexplainer
-conda install pytorch torchvision cudatoolkit=10.0 -c pytorch
+conda install pytorch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 pytorch-cuda=12.1 -c pytorch -c nvidia
 conda install pyvista
 ```
 To install the required packages, run:
@@ -31,9 +33,8 @@ To install the required packages, run:
 pip install .
 ```
 
-The public dataset was used in this work (thank the authors for sharing their datasets!):
-- [dHCP]
 ## Step 1. Data preparation
+We provide processed and curated dataset from the [Developing Human Connectome Project (dHCP)](https://biomedia.github.io/dHCP-release-notes/index.html) available [here](https://gin.g-node.org/lzjwilliams/geometric-deep-learning-benchmarking), subject to the [dHCP data sharing agreement](http://www.developingconnectome.org/data-release/second-data-release/open-access-dhcp-data-terms-of-use-version-4-0_2019-05-23/). Note that the data repository is private and only visible to those who have access.
 ## Step 2. Training
 ### Train
 After data prepration, modify the [main.py](https://github.com/qianyuhou/NeuroExplainer/blob/main/main.py) file to match the training data in your own path. To save the coresponding models and results, the save directories must be manually changed. Then, run:
