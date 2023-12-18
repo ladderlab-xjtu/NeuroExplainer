@@ -118,7 +118,7 @@ class MyBatchSampler(Sampler[List[int]]):
         # We cannot enforce this condition, so we turn off typechecking for the
         # implementation below.
         # Somewhat related: see NOTE [ Lack of Default `__len__` in Python Abstract Base Classes ]
-        return (len(self.sampler) // self.batch_size) * self.batch_size  #不成批的舍弃
+        return (len(self.sampler) // self.batch_size) * self.batch_size  
 class ImbalancedDatasetSampler(Sampler):
     """Samples elements randomly from a given list of indices for imbalanced dataset
     Arguments:
