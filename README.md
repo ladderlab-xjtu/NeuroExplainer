@@ -53,6 +53,7 @@ Val_max_auc=   ,Val_max_arr=   ,save_epoch=   ,save_num=
 last five train Dice: 
 All complete in ...
 ```
+The GPU memory consumption may vary depending on CUDA kernels.
 ### Test
 ### Visualization
 ## Citation
