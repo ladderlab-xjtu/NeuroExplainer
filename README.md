@@ -34,7 +34,7 @@ pip install .
 ```
 
 ## Step 1. Data preparation
-We provide processed and curated dataset from the [Developing Human Connectome Project (dHCP)](https://biomedia.github.io/dHCP-release-notes/index.html) available [here](https://gin.g-node.org/lzjwilliams/geometric-deep-learning-benchmarking), subject to the [dHCP data sharing agreement](http://www.developingconnectome.org/data-release/second-data-release/open-access-dhcp-data-terms-of-use-version-4-0_2019-05-23/). Note that the data repository is private and only visible to those who have access.
+We provide processed and curated dataset from the [Developing Human Connectome Project (dHCP)](https://biomedia.github.io/dHCP-release-notes/index.html). Note that the data repository is private and only visible to those who have access. The input spherical surfaces contain 10, 242 vertices, and three features, i.e., cortical thickness, mean curvature, and convexity, are required for the classfication.
 ## Step 2. Training
 ### Train
 After data prepration, modify the [main.py](https://github.com/qianyuhou/NeuroExplainer/blob/main/main.py) file to match the training data in your own path. To save the coresponding models and results, the save directories must be manually changed. Then, run:
@@ -54,6 +54,9 @@ Val_max_auc=   ,Val_max_arr=   ,save_epoch=   ,save_num=
 last five train Dice: 
 All complete in ...
 ```
+
+In our implementation, the feature representations produced by EB-1 to EB-4 in [architecture](https://github.com/qianyuhou/NeuroExplainer/blob/main/images/architecture.png) have 32, 64, 128, and 256 channels, respectively. Correspondingly, DB-1 to DB-3, and the final classification layer have 256, 128, 64, and 32 channels, respectively.
+
 The GPU memory consumption may vary depending on CUDA kernels.
 ### Step 3. Test
 In this step, you can calculate the accuracy of classification for preterm and term-born infants and obtain the output attention maps on surface and sphere. To predict a single surface’ attention map, you need to modify the [test.py](https://github.com/qianyuhou/NeuroExplainer/blob/main/test.py) file to match the data in your own path. To save the attention maps of the left and right brain at the sphere and surface, the save directories must be manually changed or created. In this step, you can use the saved model `./muilt_view_10242_ori_$epoch_max_acc.pkl` in Step 2.
