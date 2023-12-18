@@ -137,9 +137,9 @@ class muilt_view_10242(nn.Module):
         self.down7 = down_block(conv_layer, chs[5], chs[6], neigh_orders_42, neigh_orders_162)
        
         self.point = point
-        self.classify_42 = classify_block(chs[6], 2 * point[6], out_ch)  #*2是左右两个半球
+        self.classify_42 = classify_block(chs[6], 2 * point[6], out_ch)  
         self.classify_162 = classify_block(chs[5], 2 * point[5], out_ch)
-        self.SelfAttention = SelfAttention(in_dim=chs[5],head=6) #注意力机制
+        self.SelfAttention = SelfAttention(in_dim=chs[5],head=6) 
         self.classify_642 = classify_block(chs[4], 2 * point[4], out_ch)
         self.classify_2562 = classify_block(chs[3], 2 * point[3], out_ch)
         self.classify_10242 = classify_block(chs[2], 2 * point[2], out_ch)
@@ -147,7 +147,7 @@ class muilt_view_10242(nn.Module):
         self.up5 = up_block(conv_layer, chs[5], chs[4], neigh_orders_642, upconv_top_index_642, upconv_down_index_642)
         self.up4 = up_block(conv_layer, chs[4], chs[3], neigh_orders_2562, upconv_top_index_2562, upconv_down_index_2562)
         self.up3 = up_block(conv_layer, chs[3], chs[2], neigh_orders_10242, upconv_top_index_10242, upconv_down_index_10242)
-        self.classify_end = nn.Linear(chs[2], 2)  #C_out
+        self.classify_end = nn.Linear(chs[2], 2)  
         self.softmax = nn.Softmax(dim=1)
 
     def forward(self, x1, x2):
