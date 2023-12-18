@@ -8,23 +8,23 @@ NeuroExplainer learns the hierarchical attention-decoding modules under subject-
 
 ![](https://github.com/qianyuhou/NeuroExplainer/blob/main/images/attention-comparison.png)
 ## Package Dependency
-- python (3.6)
+- python (3.10)
 - pytorch (0.4.1+)
-- torchvision (0.2.1+)
-- tensorboardx (1.6+)
-- NumPy (1.11.3)
-- SciPy (1.2.1)
-- pyvista (0.22.4+)
+- torchvision (2.1.0)
+- tensorboardx (2.6.2.2)
+- NumPy (1.22.4)
+- SciPy (1.11.3)
+- pyvista (0.42.3)
 ## Step 0. Environment setup
 ```
 git clone https://github.com/ladderlab-xjtu/NeuroExplainer.git
 ```
 You can use conda to easily create an environment for the experiment using following command:
 ```
-conda create -n neuroexplainer python=3.6 
+conda create -n neuroexplainer python=3.10
 conda activate neuroexplainer
 conda install pytorch torchvision cudatoolkit=10.0 -c pytorch
-conda install -c conda-forge pyvista
+conda install pyvista
 ```
 To install the required packages, run:
 ```
@@ -54,7 +54,7 @@ last five train Dice:
 All complete in ...
 ```
 The GPU memory consumption may vary depending on CUDA kernels.
-### Test
+### Step 3. Test
 In this step, you can calculate the accuracy of classification for preterm and term-born infants and obtain the output attention maps on surface and sphere. To predict a single surface’ attention map, you need to modify the [test.py](https://github.com/qianyuhou/NeuroExplainer/blob/main/test.py) file to match the data in your own path. To save the attention maps of the left and right brain at the sphere and surface, the save directories must be manually changed or created. In this step, you can use the saved model `./muilt_view_10242_ori_$epoch_max_acc.pkl` in Step 2.
 ### Visualization
 You can use [Paraview](https://www.paraview.org/) software to visualize the attention map in VTK format. An example of the coarse-grained attention map and the fine-grained attention map of preterm infant are shown below. More usages about Paraview please refer to [Paraview](https://www.paraview.org/).
