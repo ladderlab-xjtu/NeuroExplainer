@@ -41,7 +41,18 @@ After data prepration, modify the [main.py](https://github.com/zhaofenqiang/Sphe
 python main.py
 ```
 If successful, you will see
-
+```
+6952268 paramerters in total
+learning rate = 
+[0:0/247]  LOSS=  LOSS_1=  LOSS_2=  LOSS_3=  LOSS_4=  LOSS_5=
+[0:1/247]  LOSS=  LOSS_1=  LOSS_2=  LOSS_3=  LOSS_4=  LOSS_5=
+Train_arr=
+Val_acc=   ,Val_auc=
+save max acc or auc model
+Val_max_auc=   ,Val_max_arr=   ,save_epoch=   ,save_num=
+last five train Dice: 
+All complete in ...
+```
 ### Test
 ### Visualization
 ## Citation
