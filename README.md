@@ -67,10 +67,5 @@ You can use [Paraview](https://www.paraview.org/) software to visualize the atte
 ## Citation
 Please cite the following paper if you use (part of) our code in your research:
 ```
-@article{xue2023neuroexplainer,
-  title={NeuroExplainer: Fine-Grained Attention Decoding to Uncover Cortical Development Patterns of Preterm Infants},
-  author={Xue, Chenyu and Wang, Fan and Zhu, Yuanzhuo and Li, Hui and Meng, Deyu and Shen, Dinggang and Lian, Chunfeng},
-  journal={arXiv preprint arXiv:2301.00815},
-  year={2023}
-}
+Xue, C., Wang, F., Zhu, Y., Li, H., Meng, D., Shen, D., & Lian, C.(2023). NeuroExplainer: Fine-Grained Attention Decoding to Uncover Cortical Development Patterns of Preterm Infants. In: Greenspan, H., et al. Medical Image Computing and Computer Assisted Intervention – MICCAI 2023. MICCAI 2023. Lecture Notes in Computer Science, vol 14221. Springer, Cham.
 ```
