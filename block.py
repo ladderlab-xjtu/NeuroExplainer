@@ -287,7 +287,7 @@ class classify_negative_block(nn.Module):
         x_class_minus = 1 - x_class
         x_attention = (x_attention * x_class.unsqueeze(1)).sum(dim=2)
         x_attention = self.batchnorm(x_attention)
-        x_attention_min = torch.min(x_attention, dim=1)[0] #按列求最小，返回values和indices
+        x_attention_min = torch.min(x_attention, dim=1)[0] 
         x_attention_max = torch.max(x_attention, dim=1)[0]
         x_attention = (x_attention - x_attention_min.unsqueeze(1) + 1e-6) / (x_attention_max - x_attention_min + 1e-6).unsqueeze(1)
         x_attention_minus = x_attention
